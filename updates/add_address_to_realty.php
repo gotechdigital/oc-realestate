@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class CreateAwebsomeRealestateCategories extends Migration
+class AddAddressToRealty extends Migration
 {
     public function up()
     {
