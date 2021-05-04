@@ -1,7 +1,7 @@
 title: Categories
-modelClass: Mavitm\Estate\Models\Category
-list: $/mavitm/estate/models/category/columns.yaml
-recordUrl: 'mavitm/estate/categories/update/:id'
+modelClass: Awebsome\Realestate\Models\Category
+list: $/awebsome/realestate/models/category/columns.yaml
+recordUrl: 'awebsome/realestate/categories/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

@@ -1,19 +1,19 @@
 columns:
     name:
-        label: 'mavitm.estate::lang.property.title'
+        label: 'awebsome.realestate::lang.property.title'
         type: text
         searchable: true
         sortable: true
     value:
-        label: 'mavitm.estate::lang.property.values'
+        label: 'awebsome.realestate::lang.property.values'
         type: text
         searchable: true
         sortable: true
     iconcss:
-        label: 'mavitm.estate::lang.property.iconcs'
+        label: 'awebsome.realestate::lang.property.iconcs'
         type: text
         sortable: false
     sort_order:
-        label: 'mavitm.estate::lang.property.sortOrder'
+        label: 'awebsome.realestate::lang.property.sortOrder'
         type: number
         sortable: true

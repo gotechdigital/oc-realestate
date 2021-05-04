@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/mavitm/estate/models/message/columns.yaml
+list: $/awebsome/realestate/models/message/columns.yaml
 
 # Model Class name
-modelClass: Mavitm\Estate\Models\Message
+modelClass: Awebsome\Realestate\Models\Message
 
 # List Title
 title: Manage Messages
 
 # Link URL for each record
-recordUrl: mavitm/estate/messages/preview/:id
+recordUrl: awebsome/realestate/messages/preview/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

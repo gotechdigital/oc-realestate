@@ -1,11 +1,11 @@
 name: Categories
-modelClass: Mavitm\Estate\Models\Category
-form: $/mavitm/estate/models/category/fields.yaml
-defaultRedirect: mavitm/estate/categories
+modelClass: Awebsome\Realestate\Models\Category
+form: $/awebsome/realestate/models/category/fields.yaml
+defaultRedirect: awebsome/realestate/categories
 create:
-    redirect: 'mavitm/estate/categories/update/:id'
-    redirectClose: mavitm/estate/categories
+    redirect: 'awebsome/realestate/categories/update/:id'
+    redirectClose: awebsome/realestate/categories
 update:
-    redirect: mavitm/estate/categories
-    redirectClose: mavitm/estate/categories
+    redirect: awebsome/realestate/categories
+    redirectClose: awebsome/realestate/categories
 preview: {  }

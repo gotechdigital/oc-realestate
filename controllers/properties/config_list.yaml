@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/mavitm/estate/models/property/columns.yaml
+list: $/awebsome/realestate/models/property/columns.yaml
 
 # Model Class name
-modelClass: Mavitm\Estate\Models\Property
+modelClass: Awebsome\Realestate\Models\Property
 
 # List Title
 title: Manage Properties
 
 # Link URL for each record
-recordUrl: mavitm/estate/properties/update/:id
+recordUrl: awebsome/realestate/properties/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

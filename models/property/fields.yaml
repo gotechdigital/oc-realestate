@@ -1,16 +1,16 @@
 fields:
     name:
-        label: 'mavitm.estate::lang.property.title'
+        label: 'awebsome.realestate::lang.property.title'
         span: auto
         required: 1
         type: text
     value:
-        label: 'mavitm.estate::lang.property.values'
+        label: 'awebsome.realestate::lang.property.values'
         span: auto
         required: 1
         type: text
     iconcss:
-        label: 'mavitm.estate::lang.property.iconcs'
+        label: 'awebsome.realestate::lang.property.iconcs'
         type: awesomeiconslist
         unicodeValue: false
         emptyOption: false
@@ -18,7 +18,7 @@ fields:
         placeholder: Select Icon
         span: auto
     sort_order:
-        label: 'mavitm.estate::lang.property.sortOrder'
+        label: 'awebsome.realestate::lang.property.sortOrder'
         span: auto
         required: 1
         type: number

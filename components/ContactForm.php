@@ -1,14 +1,14 @@
-<?php namespace Mavitm\Estate\Components;
+<?php namespace Awebsome\Realestate\Components;
 /**
-*@Author Mavitm
-*@url http://www.mavitm.com
+*@Author Awebsome
+*@url https://gotech.ar
 */
 
 use Lang, Session, Validator, Flash;
 use Cms\Classes\ComponentBase;
-use Mavitm\Estate\Models\Message;
-use Mavitm\Estate\Models\Realty;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Message;
+use Awebsome\Realestate\Models\Realty;
+use Awebsome\Realestate\Models\Settings;
 
 class ContactForm extends ComponentBase
 {
@@ -17,8 +17,8 @@ class ContactForm extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'mavitm.estate::lang.components.contactForm',
-            'description' => 'mavitm.estate::lang.components.contactFormDesc'
+            'name' => 'awebsome.realestate::lang.components.contactForm',
+            'description' => 'awebsome.realestate::lang.components.contactFormDesc'
         ];
     }
     
@@ -27,7 +27,7 @@ class ContactForm extends ComponentBase
         $settings = Settings::instance();
         return [
             'slug' => [
-                'title' => 'mavitm.estate::lang.realty.slug',
+                'title' => 'awebsome.realestate::lang.realty.slug',
                 'default' => '{{ :slug }}',
                 'type' => 'string'
             ]
@@ -37,7 +37,7 @@ class ContactForm extends ComponentBase
     public function onRun()
     {
         $this->item = $this->page['item'] = $this->loadItem();
-        $this->contactMessage = Lang::get('mavitm.estate::lang.contactForm.message', [ 'realty' => "ID: {$this->item->id}" ]);
+        $this->contactMessage = Lang::get('awebsome.realestate::lang.contactForm.message', [ 'realty' => "ID: {$this->item->id}" ]);
     }
 
     protected function loadItem()
@@ -59,7 +59,7 @@ class ContactForm extends ComponentBase
         $input = post();
 
         if (Session::token() != post('_token')) {
-            Flash::error(Lang::get('mavitm.estate::lang.contactForm.csrf_error'));
+            Flash::error(Lang::get('awebsome.realestate::lang.contactForm.csrf_error'));
             return false;
         }
 
@@ -74,8 +74,8 @@ class ContactForm extends ComponentBase
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        Flash::success(Lang::get('mavitm.estate::lang.contactForm.success'));
-        Session::flash('formSuccess', Lang::get('mavitm.estate::lang.contactForm.success'));
+        Flash::success(Lang::get('awebsome.realestate::lang.contactForm.success'));
+        Session::flash('formSuccess', Lang::get('awebsome.realestate::lang.contactForm.success'));
 
         $item->messages()->create([
             'email' => $input['email'],

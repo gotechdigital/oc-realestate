@@ -1,11 +1,11 @@
 name: Features
-modelClass: Mavitm\Estate\Models\Feature
-form: $/mavitm/estate/models/feature/fields.yaml
-defaultRedirect: mavitm/estate/features
+modelClass: Awebsome\Realestate\Models\Feature
+form: $/awebsome/realestate/models/feature/fields.yaml
+defaultRedirect: awebsome/realestate/features
 create:
-    redirect: 'mavitm/estate/features/update/:id'
-    redirectClose: mavitm/estate/features
+    redirect: 'awebsome/realestate/features/update/:id'
+    redirectClose: awebsome/realestate/features
 update:
-    redirect: mavitm/estate/features
-    redirectClose: mavitm/estate/features
+    redirect: awebsome/realestate/features
+    redirectClose: awebsome/realestate/features
 preview: {  }

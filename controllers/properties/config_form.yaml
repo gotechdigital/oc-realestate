@@ -6,25 +6,25 @@
 name: Property
 
 # Model Form Field configuration
-form: $/mavitm/estate/models/property/fields.yaml
+form: $/awebsome/realestate/models/property/fields.yaml
 
 # Model Class name
-modelClass: Mavitm\Estate\Models\Property
+modelClass: Awebsome\Realestate\Models\Property
 
 # Default redirect location
-defaultRedirect: mavitm/estate/properties
+defaultRedirect: awebsome/realestate/properties
 
 # Create page
 create:
     title: Create Property
-    redirect: mavitm/estate/properties/update/:id
-    redirectClose: mavitm/estate/properties
+    redirect: awebsome/realestate/properties/update/:id
+    redirectClose: awebsome/realestate/properties
 
 # Update page
 update:
     title: Edit Property
-    redirect: mavitm/estate/properties
-    redirectClose: mavitm/estate/properties
+    redirect: awebsome/realestate/properties
+    redirectClose: awebsome/realestate/properties
 
 # Preview page
 preview:

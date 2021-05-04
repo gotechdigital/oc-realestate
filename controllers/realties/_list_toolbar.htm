@@ -1,5 +1,5 @@
 <div data-control="toolbar">
-    <a href="<?= Backend::url('mavitm/estate/realties/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('backend::lang.form.create')) ?></a>
+    <a href="<?= Backend::url('awebsome/realestate/realties/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('backend::lang.form.create')) ?></a>
     <button
             class="btn btn-default oc-icon-trash-o"
             disabled="disabled"
@@ -24,13 +24,13 @@
             checked: $('.control-list').listWidget('getChecked')
         })"
             data-request="onShow"
-            data-request-confirm="<?= e(trans('mavitm.estate::lang.realty.show_confirm')) ?>"
+            data-request-confirm="<?= e(trans('awebsome.realestate::lang.realty.show_confirm')) ?>"
             data-trigger-action="enable"
             data-trigger=".control-list input[type=checkbox]"
             data-trigger-condition="checked"
             data-request-success="$(this).prop('disabled', true)"
             data-stripe-load-indicator>
-        <?= e(trans('mavitm.estate::lang.realty.selectShow')) ?>
+        <?= e(trans('awebsome.realestate::lang.realty.selectShow')) ?>
     </button>
 
     <button
@@ -40,13 +40,13 @@
             checked: $('.control-list').listWidget('getChecked')
         })"
             data-request="onHide"
-            data-request-confirm="<?= e(trans('mavitm.estate::lang.realty.hide_confirm')) ?>"
+            data-request-confirm="<?= e(trans('awebsome.realestate::lang.realty.hide_confirm')) ?>"
             data-trigger-action="enable"
             data-trigger=".control-list input[type=checkbox]"
             data-trigger-condition="checked"
             data-request-success="$(this).prop('disabled', true)"
             data-stripe-load-indicator>
-        <?= e(trans('mavitm.estate::lang.realty.selectHide')) ?>
+        <?= e(trans('awebsome.realestate::lang.realty.selectHide')) ?>
     </button>
 
 

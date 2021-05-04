@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate;
+<?php namespace Awebsome\Realestate;
 
 use Backend;
 use System\Classes\PluginBase;
@@ -10,9 +10,9 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'          => 'mavitm.estate::lang.plugin.name',
-            'description'   => 'mavitm.estate::lang.plugin.description',
-            'author'        => 'Mavitm',
+            'name'          => 'awebsome.realestate::lang.plugin.name',
+            'description'   => 'awebsome.realestate::lang.plugin.description',
+            'author'        => 'Awebsome',
             'icon'          => 'icon-building',
             'homepage'      => ''
         ];
@@ -21,22 +21,22 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Mavitm\Estate\Components\SearchForm'    => 'search_form',
-            'Mavitm\Estate\Components\Realtylist'    => 'realty_list',
-            'Mavitm\Estate\Components\Realtydetail'  => 'realty_detail',
-            'Mavitm\Estate\Components\Category'      => 'realty_category',
-            'Mavitm\Estate\Components\ContactForm'   => 'contact_form',
-            'Mavitm\Estate\Components\PopularList'   => 'popular_list',
-            'Mavitm\Estate\Components\NewestList'    => 'newest_list'
+            'Awebsome\Realestate\Components\SearchForm'    => 'search_form',
+            'Awebsome\Realestate\Components\Realtylist'    => 'realty_list',
+            'Awebsome\Realestate\Components\Realtydetail'  => 'realty_detail',
+            'Awebsome\Realestate\Components\Category'      => 'realty_category',
+            'Awebsome\Realestate\Components\ContactForm'   => 'contact_form',
+            'Awebsome\Realestate\Components\PopularList'   => 'popular_list',
+            'Awebsome\Realestate\Components\NewestList'    => 'newest_list'
         ];
     }
 
     public function registerPermissions()
     {
         return [
-            'mavitm.estate.access.realty' => [
-                'tab'   => 'mavitm.estate::lang.plugin.name',
-                'label' => 'mavitm.estate::lang.plugin.name'
+            'awebsome.realestate.access.realty' => [
+                'tab'   => 'awebsome.realestate::lang.plugin.name',
+                'label' => 'awebsome.realestate::lang.plugin.name'
             ]
         ];
     }
@@ -45,47 +45,47 @@ class Plugin extends PluginBase
     {
         return [
             'estate' => [
-                'label'         => 'mavitm.estate::lang.plugin.name',
-                'url'           => Backend::url('mavitm/estate/realties'),
+                'label'         => 'awebsome.realestate::lang.plugin.name',
+                'url'           => Backend::url('awebsome/realestate/realties'),
                 'icon'          => 'icon-building',
-                'permissions'   => ['mavitm.estate.access.realty'],
+                'permissions'   => ['awebsome.realestate.access.realty'],
 
                 'sideMenu' => [
                     'realty' => [
-                        'label'         => 'mavitm.estate::lang.plugin.name',
-                        'url'           => Backend::url('mavitm/estate/realties'),
+                        'label'         => 'awebsome.realestate::lang.plugin.name',
+                        'url'           => Backend::url('awebsome/realestate/realties'),
                         'icon'          => 'icon-building-o',
-                        'permissions'   => ['mavitm.estate.access.realty']
+                        'permissions'   => ['awebsome.realestate.access.realty']
                     ],
                     'category' => [
-                        'label'         => 'mavitm.estate::lang.plugin.category',
-                        'url'           => Backend::url('mavitm/estate/categories'),
+                        'label'         => 'awebsome.realestate::lang.plugin.category',
+                        'url'           => Backend::url('awebsome/realestate/categories'),
                         'icon'          => 'icon-folder',
-                        'permissions'   =>['mavitm.estate.access.realty']
+                        'permissions'   =>['awebsome.realestate.access.realty']
                     ],
                     'feature' => [
-                        'label'         => 'mavitm.estate::lang.plugin.features',
-                        'url'           => Backend::url('mavitm/estate/features'),
+                        'label'         => 'awebsome.realestate::lang.plugin.features',
+                        'url'           => Backend::url('awebsome/realestate/features'),
                         'icon'          => 'icon-check-square-o',
-                        'permissions'   =>['mavitm.estate.access.realty']
+                        'permissions'   =>['awebsome.realestate.access.realty']
                     ],
                     'tags' => [
-                        'label'         => 'mavitm.estate::lang.tags.title',
-                        'url'           => Backend::url('mavitm/estate/tags'),
+                        'label'         => 'awebsome.realestate::lang.tags.title',
+                        'url'           => Backend::url('awebsome/realestate/tags'),
                         'icon'          => 'icon-tags',
-                        'permissions'   => ['mavitm.estate.access.realty']
+                        'permissions'   => ['awebsome.realestate.access.realty']
                     ],
                     'setting' => [
-                        'label'         => 'mavitm.estate::lang.settings.menuLabel',
-                        'url'           => Backend::url('system/settings/update/mavitm/estate/settings'),
+                        'label'         => 'awebsome.realestate::lang.settings.menuLabel',
+                        'url'           => Backend::url('system/settings/update/awebsome/realestate/settings'),
                         'icon'          => 'icon-cog',
-                        'permissions'   => ['mavitm.estate.access.realty']
+                        'permissions'   => ['awebsome.realestate.access.realty']
                     ],
                     'messages' => [
-                        'label'         => 'mavitm.estate::lang.plugin.messages',
-                        'url'           => Backend::url('mavitm/estate/messages'),
+                        'label'         => 'awebsome.realestate::lang.plugin.messages',
+                        'url'           => Backend::url('awebsome/realestate/messages'),
                         'icon'          => 'icon-envelope',
-                        'permissions'   => ['mavitm.estate.access.realty']
+                        'permissions'   => ['awebsome.realestate.access.realty']
                     ]
                 ]
             ]
@@ -96,11 +96,11 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'         => 'mavitm.estate::lang.settings.menuLabel',
-                'description'   => 'mavitm.estate::lang.settings.menuDescription',
-                'category'      => 'mavitm.estate::lang.plugin.name',
+                'label'         => 'awebsome.realestate::lang.settings.menuLabel',
+                'description'   => 'awebsome.realestate::lang.settings.menuDescription',
+                'category'      => 'awebsome.realestate::lang.plugin.name',
                 'icon'          => 'icon-cog',
-                'class'         => 'Mavitm\Estate\Models\Settings',
+                'class'         => 'Awebsome\Realestate\Models\Settings',
                 'order'         => 100
             ],
         ];

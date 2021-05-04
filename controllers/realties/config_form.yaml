@@ -1,11 +1,11 @@
 name: Realties
-modelClass: Mavitm\Estate\Models\Realty
-form: $/mavitm/estate/models/realty/fields.yaml
-defaultRedirect: mavitm/estate/realties
+modelClass: Awebsome\Realestate\Models\Realty
+form: $/awebsome/realestate/models/realty/fields.yaml
+defaultRedirect: awebsome/realestate/realties
 create:
-    redirect: 'mavitm/estate/realties/update/:id'
-    redirectClose: mavitm/estate/realties
+    redirect: 'awebsome/realestate/realties/update/:id'
+    redirectClose: awebsome/realestate/realties
 update:
-    redirect: mavitm/estate/realties
-    redirectClose: mavitm/estate/realties
+    redirect: awebsome/realestate/realties
+    redirectClose: awebsome/realestate/realties
 preview: {  }

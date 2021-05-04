@@ -1,8 +1,8 @@
-<?php namespace Mavitm\Estate\Controllers;
+<?php namespace Awebsome\Realestate\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use Mavitm\Estate\Models\Realty;
+use Awebsome\Realestate\Models\Realty;
 
 class Realties extends Controller
 {
@@ -17,13 +17,13 @@ class Realties extends Controller
     public $relationConfig  = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'mavitm.estate.access.realty' 
+        'awebsome.realestate.access.realty' 
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Mavitm.Estate', 'estate', 'realty');
+        BackendMenu::setContext('Awebsome.Realestate', 'estate', 'realty');
     }
 
     public function formBeforeCreate($model)
@@ -33,13 +33,13 @@ class Realties extends Controller
 
     public function create()
     {
-        $this->addCss('/plugins/mavitm/estate/assets/css/backend.css');
+        $this->addCss('/plugins/awebsome/realestate/assets/css/backend.css');
         return $this->asExtension('FormController')->create();
     }
 
     public function update($recordId = null)
     {
-        $this->addCss('/plugins/mavitm/estate/assets/css/backend.css');
+        $this->addCss('/plugins/awebsome/realestate/assets/css/backend.css');
         return $this->asExtension('FormController')->update($recordId);
     }
 

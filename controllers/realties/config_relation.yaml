@@ -3,7 +3,7 @@
 # ===================================
 
 properties:
-    label: mavitm.estate::lang.realty.properties
-    list: ~/plugins/mavitm/estate/models/property/columns.yaml
-    form: ~/plugins/mavitm/estate/models/property/fields.yaml
+    label: awebsome.realestate::lang.realty.properties
+    list: ~/plugins/awebsome/realestate/models/property/columns.yaml
+    form: ~/plugins/awebsome/realestate/models/property/fields.yaml
     emptyMessage: backend::lang.list.no_records

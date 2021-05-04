@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate\Models;
+<?php namespace Awebsome\Realestate\Models;
 
 use Model;
 
@@ -12,7 +12,7 @@ class Tag extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'mavitm_estate_tags';
+    public $table = 'awebsome_realestate_tags';
 
     public $fillable = ['title'];
 
@@ -20,7 +20,7 @@ class Tag extends Model
      * Validation
      */
     public $rules = [
-        'title' => 'required|unique:mavitm_estate_tags'
+        'title' => 'required|unique:awebsome_realestate_tags'
     ];
 
     public $customMessages = [
@@ -30,13 +30,13 @@ class Tag extends Model
 
     public $belongsToMany = [
         'realty' => [
-            'Mavitm\Estate\Models\Realty',
-            'table' => 'mavitm_estate_realty_tag',
-            'order' => 'mavitm_estate_realty.updated_at desc'
+            'Awebsome\Realestate\Models\Realty',
+            'table' => 'awebsome_realestate_realty_tag',
+            'order' => 'awebsome_realestate_realty.updated_at desc'
         ],
         'items_count' => [
-            'Mavitm\Estate\Models\Realty',
-            'table' => 'mavitm_estate_realty_tag',
+            'Awebsome\Realestate\Models\Realty',
+            'table' => 'awebsome_realestate_realty_tag',
             'count' => true
         ]
     ];

@@ -1,38 +1,38 @@
 columns:
     realtyimages:
-        label: 'mavitm.estate::lang.realty.images'
+        label: 'awebsome.realestate::lang.realty.images'
         type: partial
-        path: ~/plugins/mavitm/estate/models/realty/_realtyimages.htm
+        path: ~/plugins/awebsome/realestate/models/realty/_realtyimages.htm
         sortable: false
     title:
-        label: 'mavitm.estate::lang.realty.title'
+        label: 'awebsome.realestate::lang.realty.title'
         type: text
         searchable: true
         sortable: true
     categoryName:
-        label: 'mavitm.estate::lang.realty.category'
+        label: 'awebsome.realestate::lang.realty.category'
         type: text
     text_status:
-        label: 'mavitm.estate::lang.realty.status'
+        label: 'awebsome.realestate::lang.realty.status'
         type: text
     formatprice:
-        label: 'mavitm.estate::lang.realty.price'
+        label: 'awebsome.realestate::lang.realty.price'
         type: text
     address:
-        label: 'mavitm.estate::lang.realty.address'
+        label: 'awebsome.realestate::lang.realty.address'
         type: text
         searchable: true
         sortable: true
     published:
-        label: 'mavitm.estate::lang.realty.published'
+        label: 'awebsome.realestate::lang.realty.published'
         type: switch
     created_at:
-        label: 'mavitm.estate::lang.realty.create_at'
+        label: 'awebsome.realestate::lang.realty.create_at'
         type: datetime
         invisible: true
         sortable: true
     updated_at:
-        label: 'mavitm.estate::lang.realty.update_at'
+        label: 'awebsome.realestate::lang.realty.update_at'
         type: datetime
         searchable: false
         invisible: true

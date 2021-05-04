@@ -69,16 +69,4 @@ categoryPage = "estate"
 Settings -> Real Estate -> Setting
 Tab general -> money format, show category description, show category count number (for category menu)
 Tab pages -> Optional Detail and list pages,  User definable maximum limit, page item limit
-Tab interface -> Option to include css and javascript   
-
-----
-
-![](http://mavitm.com/storage/app/media/proje/estate/images/3.png)
-![](http://mavitm.com/storage/app/media/proje/estate/images/4.png)
-![](http://mavitm.com/storage/app/media/proje/estate/images/5.png)
-![](http://mavitm.com/storage/app/media/proje/estate/images/6.png)
-
-----
-
-![](http://mavitm.com/storage/app/media/proje/estate/images/9.png)
-![](http://mavitm.com/storage/app/media/proje/estate/images/10.png)
+Tab interface -> Option to include css and javascript

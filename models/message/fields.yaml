@@ -12,27 +12,27 @@ fields:
             - preview
         type: text
     name:
-        label: 'mavitm.estate::lang.message.name'
+        label: 'awebsome.realestate::lang.message.name'
         type: text
         context:
             - preview
     email:
-        label: 'mavitm.estate::lang.message.email'
+        label: 'awebsome.realestate::lang.message.email'
         type: text
         context:
             - preview
     phone:
-        label: 'mavitm.estate::lang.message.phone'
+        label: 'awebsome.realestate::lang.message.phone'
         type: text
         context:
             - preview
     message:
-        label: 'mavitm.estate::lang.message.message'
+        label: 'awebsome.realestate::lang.message.message'
         type: textarea
         context:
             - preview
     created_at:
-        label: 'mavitm.estate::lang.message.created_at'
+        label: 'awebsome.realestate::lang.message.created_at'
         type: text
         context:
             - preview

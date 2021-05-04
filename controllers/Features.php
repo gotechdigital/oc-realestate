@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate\Controllers;
+<?php namespace Awebsome\Realestate\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -16,12 +16,12 @@ class Features extends Controller
     public $reorderConfig   = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'mavitm.estate.access.realty'
+        'awebsome.realestate.access.realty'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Mavitm.Estate', 'estate', 'feature');
+        BackendMenu::setContext('Awebsome.Realestate', 'estate', 'feature');
     }
 }

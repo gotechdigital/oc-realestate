@@ -1,5 +1,5 @@
-title: 'mavitm.estate::lang.features.reorder'
-modelClass: Mavitm\Estate\Models\Feature
+title: 'awebsome.realestate::lang.features.reorder'
+modelClass: Awebsome\Realestate\Models\Feature
 nameFrom: title
 toolbar:
     buttons: reorder_toolbar

@@ -1,16 +1,16 @@
-<?php namespace Mavitm\Estate\Components;
+<?php namespace Awebsome\Realestate\Components;
 /**
-*@Author Mavitm
-*@url http://www.mavitm.com
+*@Author Awebsome
+*@url https://gotech.ar
 */
 use Str;
 use Lang;
 use Redirect;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Mavitm\Estate\Models\Realty;
-use Mavitm\Estate\Models\Category;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Realty;
+use Awebsome\Realestate\Models\Category;
+use Awebsome\Realestate\Models\Settings;
 use Illuminate\Support\Facades\Input;
 class Realtydetail extends ComponentBase
 {
@@ -21,8 +21,8 @@ class Realtydetail extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'mavitm.estate::lang.components.detailName',
-            'description' => 'mavitm.estate::lang.components.detailDesc'
+            'name'        => 'awebsome.realestate::lang.components.detailName',
+            'description' => 'awebsome.realestate::lang.components.detailDesc'
         ];
     }
 
@@ -31,25 +31,25 @@ class Realtydetail extends ComponentBase
         $settings             = Settings::instance();
         return [
             'slug' => [
-                'title'       => 'mavitm.estate::lang.realty.slug',
+                'title'       => 'awebsome.realestate::lang.realty.slug',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string'
             ],
             'categoryPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_category',
+                'title'             => 'awebsome.realestate::lang.components.items_category',
                 'type'              => 'dropdown',
                 'default'           => $settings->category_page,
                 'group'             => 'Links',
             ],
             'detailPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_post',
+                'title'             => 'awebsome.realestate::lang.components.items_post',
                 'type'              => 'dropdown',
                 'default'           => $settings->detail_page,
                 'group'             => 'Links',
                 'options'           => $this->getCategoryPageOptions()
             ],
             'searchPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_search',
+                'title'             => 'awebsome.realestate::lang.components.items_search',
                 'type'              => 'dropdown',
                 'default'           => $settings->search_page,
                 'group'             => 'Links',

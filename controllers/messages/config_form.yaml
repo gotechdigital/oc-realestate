@@ -6,25 +6,25 @@
 name: Message
 
 # Model Form Field configuration
-form: $/mavitm/estate/models/message/fields.yaml
+form: $/awebsome/realestate/models/message/fields.yaml
 
 # Model Class name
-modelClass: Mavitm\Estate\Models\Message
+modelClass: Awebsome\Realestate\Models\Message
 
 # Default redirect location
-defaultRedirect: mavitm/estate/messages
+defaultRedirect: awebsome/realestate/messages
 
 # Create page
 create:
     title: Create Message
-    redirect: mavitm/estate/messages/update/:id
-    redirectClose: mavitm/estate/messages
+    redirect: awebsome/realestate/messages/update/:id
+    redirectClose: awebsome/realestate/messages
 
 # Update page
 update:
     title: Edit Message
-    redirect: mavitm/estate/messages
-    redirectClose: mavitm/estate/messages
+    redirect: awebsome/realestate/messages
+    redirectClose: awebsome/realestate/messages
 
 # Preview page
 preview:

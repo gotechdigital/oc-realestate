@@ -1,15 +1,15 @@
-<?php namespace Mavitm\Estate\Components;
+<?php namespace Awebsome\Realestate\Components;
 /**
-*@Author Mavitm
-*@url http://www.mavitm.com
+*@Author Awebsome
+*@url https://gotech.ar
 */
 use Str;
 use Lang;
 use Redirect;
 use Cms\Classes\ComponentBase;
-use Mavitm\Estate\Models\Realty;
-use Mavitm\Estate\Models\Category;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Realty;
+use Awebsome\Realestate\Models\Category;
+use Awebsome\Realestate\Models\Settings;
 
 class SearchForm extends ComponentBase
 {
@@ -36,8 +36,8 @@ class SearchForm extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'mavitm.estate::lang.components.searchForm',
-            'description' => 'mavitm.estate::lang.components.searchFormDesc'
+            'name'        => 'awebsome.realestate::lang.components.searchForm',
+            'description' => 'awebsome.realestate::lang.components.searchFormDesc'
         ];
     }
 
@@ -58,7 +58,7 @@ class SearchForm extends ComponentBase
         $this->langs                = new \stdClass();
 
         $this->page['placeholder']  =
-        $this->langs->placeholder   = Lang::get('mavitm.estate::lang.components.searchPlaceHolder');
+        $this->langs->placeholder   = Lang::get('awebsome.realestate::lang.components.searchPlaceHolder');
 
         $settings->_imported($this);
     }

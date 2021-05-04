@@ -5,23 +5,23 @@
 scopes:
 
     category:
-        label: mavitm.estate::lang.realty.category
-        modelClass: Mavitm\Estate\Models\Category
+        label: awebsome.realestate::lang.realty.category
+        modelClass: Awebsome\Realestate\Models\Category
         nameFrom: title
         conditions: category_id in (:filtered)
 
     created_date:
-        label: mavitm.estate::lang.realty.create_at
+        label: awebsome.realestate::lang.realty.create_at
         type: daterange
         conditions: created_at >= ':after' AND created_at <= ':before'
 
     updated_date:
-        label: mavitm.estate::lang.realty.update_at
+        label: awebsome.realestate::lang.realty.update_at
         type: daterange
         conditions: updated_at >= ':after' AND updated_at <= ':before'
 
     parent:
-        label: mavitm.estate::lang.realty.published
+        label: awebsome.realestate::lang.realty.published
         type: switch
         conditions:
              - published <> 1

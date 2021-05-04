@@ -1,20 +1,20 @@
-<?php namespace Mavitm\Estate\Updates;
+<?php namespace Awebsome\Realestate\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateMavitmEstateCategories extends Migration
+class CreateMavitmEstateCategories extends Migration
 {
     public function up()
     {
-        Schema::table('mavitm_estate_realty', function($table) {
+        Schema::table('awebsome_realestate_realty', function($table) {
             $table->string('address', 255)->after('description')->nullable();
         });
     }
     
     public function down()
     {
-        Schema::table('mavitm_estate_realty', function($table) {
+        Schema::table('awebsome_realestate_realty', function($table) {
             $table->dropColumn('address');
         });
     }
