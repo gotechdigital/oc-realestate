@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class CreateMavitmEstateCategories extends Migration
+class CreateAwebsomeRealestateCategories extends Migration
 {
     public function up()
     {
