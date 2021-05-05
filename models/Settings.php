@@ -1,12 +1,8 @@
 <?php namespace Awebsome\Realestate\Models;
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 02.10.2016
- * Time: 13:39
- */
+
 use Model;
 use Cms\Classes\Page;
+use Responsiv\Currency\Models\Currency;
 
 class Settings extends Model
 {
@@ -17,24 +13,6 @@ class Settings extends Model
     private static
             $importVendor   = 0;
 
-    /**
-     * Font Awesome Currency Icons
-     * @var array
-     */
-    public $currencyCssClass= [
-        'btc'   => 'bitcoin',
-        'eur'   => 'euro',
-        'gbp'   => 'gbp',
-        'gg'    => 'gg',
-        'ils'   => 'ils',
-        'inr'   => 'jnr',
-        'jpy'   => 'jpy',
-        'krw'   => 'krw',
-        'rub'   => 'rub',
-        'usd'   => 'usd',
-        'try'   => 'try',
-    ];
-
     public function getDetailPageOptions()
     {
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
@@ -42,7 +20,7 @@ class Settings extends Model
 
     public function getCurrencyOptions()
     {
-        return $this->currencyCssClass;
+        return Currency::isEnabled()->orderBy('currency_code', 'asc')->lists('currency_code', 'currency_code');
     }
 
     /** This should not be here **/

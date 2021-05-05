@@ -141,6 +141,8 @@ class Realtylist extends ComponentBase
 
     public function onRun()
     {
+        $this->page['realties'] = $this->getProperties();
+
         $this->prepareVars();
         $settings                   = Settings::instance();
         $this->data                 = $this->page['data']         = $this->loadList();
@@ -230,4 +232,8 @@ class Realtylist extends ComponentBase
         return $items;
     }
 
+    public function getProperties()
+    {
+        return Realty::isPublished()->get();
+    }
 }

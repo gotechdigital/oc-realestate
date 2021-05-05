@@ -65,6 +65,7 @@ class Realtydetail extends ComponentBase
 
     public function onRun()
     {
+            $this->page['realty'] = $this->getRealty();
 
             $settings = Settings::instance();
             $this->currency = $this->page['currency'] = $settings->currency;
@@ -101,6 +102,12 @@ class Realtydetail extends ComponentBase
 
         $this->item->increment('views');
 
+    }
+
+    public function getRealty()
+    {
+        $slug = $this->property('slug');
+        return Realty::isPublished()->where('slug', $slug)->first();
     }
 
 }
