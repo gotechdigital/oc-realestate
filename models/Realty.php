@@ -114,23 +114,11 @@ class Realty extends Model
 
     public function getStatusOptions()
     {
-        /* db index => lang index */
         return [
-//            0 => e(trans('awebsome.realestate::lang.realty.buy')),
-//            1 => e(trans('awebsome.realestate::lang.realty.rent')),
-//            2 => e(trans('awebsome.realestate::lang.realty.sold'))
-
-            0 => Message::get("Buy"),//_("Buy"),
-            1 => Message::get("Rent"),//_("Rent"),
-            2 => Message::get("Sold"),//_("Sold")
-
+            'rent' => 'awebsome.realestate::lang.realty.rent',
+            'sale' => 'awebsome.realestate::lang.realty.sale',
+            'sold' => 'awebsome.realestate::lang.realty.sold'
         ];
-    }
-
-    public function getTextStatusAttribute($value)
-    {
-        /* db index => lang index */
-        return $this->getStatusOptions()[$this->status];
     }
 
     ############################################################################################################

@@ -12,7 +12,7 @@ columns:
     categoryName:
         label: 'awebsome.realestate::lang.realty.category'
         type: text
-    text_status:
+    status:
         label: 'awebsome.realestate::lang.realty.status'
         type: text
     formatprice:

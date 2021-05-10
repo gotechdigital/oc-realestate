@@ -38,3 +38,6 @@
 1.1.4:
     - 'Added view count to real estate'
     - add_views_to_realty.php
+1.1.5:
+    - 'Update v115'
+    - update_v115.php
