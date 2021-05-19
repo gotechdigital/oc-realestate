@@ -268,7 +268,7 @@ class Realtylist extends ComponentBase
                 break;
         }
 
-        return $properties->get();
+        return $properties->paginate($this->property('itemsPerPage'));
     }
 
     public function onFilter()
