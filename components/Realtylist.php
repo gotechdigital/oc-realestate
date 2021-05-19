@@ -8,6 +8,7 @@ use October\Rain\Exception\ApplicationException;
 use Str;
 use Lang;
 use Redirect;
+use Session;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Awebsome\Realestate\Models\Realty;
@@ -141,6 +142,7 @@ class Realtylist extends ComponentBase
 
     public function onRun()
     {
+        $this->page['filters'] = Session::get('filters');
         $this->page['realties'] = $this->getProperties();
 
         $this->prepareVars();
@@ -234,6 +236,53 @@ class Realtylist extends ComponentBase
 
     public function getProperties()
     {
-        return Realty::isPublished()->get();
+        $properties = Realty::isPublished();
+        $filter_condition = Session::get('filters.filter_condition');
+        $order = Session::get('filters.order');
+        
+        if(!empty($filter_condition)) {
+            $properties->where('status', $filter_condition);
+        }
+
+        // date_desc
+        // date_asc
+        // price_asc
+        // price_desc
+        
+        switch ($order) {
+            case 'date_desc':
+                $properties->orderBy('created_at','desc');
+                break;
+            case 'date_asc':
+                $properties->orderBy('created_at','asc');
+                break;
+            case 'price_asc':
+                $properties->orderBy('price','asc');
+                break;
+            case 'price_desc':
+                $properties->orderBy('price','desc');
+                break;
+            
+            default:
+                $properties->orderBy('created_at','desc');
+                break;
+        }
+
+        return $properties->get();
     }
+
+    public function onFilter()
+    {
+        if(Input::has('filter_condition')) {
+            $filter = Input::get('filter_condition');
+            Session::put('filters.filter_condition', $filter);
+        }
+        
+        if(Input::has('order')) {
+            $order = Input::get('order');
+            Session::put('filters.order', $order);
+        }
+    }
+
+
 }
