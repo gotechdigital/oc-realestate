@@ -1,13 +1,13 @@
-<?php namespace Mavitm\Estate\Updates;
+<?php namespace Awebsome\Realestate\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateMavitmEstateFeatures extends Migration
+class CreateAwebsomeRealestateFeatures extends Migration
 {
     public function up()
     {
-        Schema::create('mavitm_estate_features', function($table)
+        Schema::create('awebsome_realestate_features', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -20,6 +20,6 @@ class BuilderTableCreateMavitmEstateFeatures extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('mavitm_estate_features');
+        Schema::dropIfExists('awebsome_realestate_features');
     }
 }

@@ -1,16 +1,16 @@
 <?php
 /**
-*@Author Mavitm
-*@url http://www.mavitm.com
+*@Author Awebsome
+*@url https://gotech.ar
 */
 
-namespace Mavitm\Estate\Components;
+namespace Awebsome\Realestate\Components;
 
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Mavitm\Estate\Models\Realty;
-use Mavitm\Estate\Models\Settings;
-use Mavitm\Estate\Models\Category as CategoryModel;
+use Awebsome\Realestate\Models\Realty;
+use Awebsome\Realestate\Models\Settings;
+use Awebsome\Realestate\Models\Category as CategoryModel;
 
 
 class Category extends ComponentBase{
@@ -32,8 +32,8 @@ class Category extends ComponentBase{
     public function componentDetails()
     {
         return [
-            'name'        => 'mavitm.estate::lang.components.catehoryName',
-            'description' => 'mavitm.estate::lang.components.categoryDesc'
+            'name'        => 'awebsome.realestate::lang.components.catehoryName',
+            'description' => 'awebsome.realestate::lang.components.categoryDesc'
         ];
     }
 
@@ -42,12 +42,12 @@ class Category extends ComponentBase{
         $settings             = Settings::instance();
         return [
             'categoryPage' => [
-                'title'       => 'mavitm.estate::lang.components.items_category',
+                'title'       => 'awebsome.realestate::lang.components.items_category',
                 'type'        => 'dropdown',
                 'default'     => $settings->category_page,
             ],
             'countSub' => [
-                'title'       => 'mavitm.estate::lang.settings.showCount',
+                'title'       => 'awebsome.realestate::lang.settings.showCount',
                 'description' => false,
                 'default'     => ($settings->show_category_count ? 1:0),
                 'type'        => 'checkbox'

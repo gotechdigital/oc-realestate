@@ -1,36 +1,36 @@
 plugin:
-    name: 'mavitm.estate::lang.plugin.name'
-    description: 'mavitm.estate::lang.plugin.description'
-    author: MaviTm
+    name: 'awebsome.realestate::lang.plugin.name'
+    description: 'awebsome.realestate::lang.plugin.description'
+    author: awebsome
     icon: oc-icon-building
     homepage: ''
 permissions:
-    mavitm.estate.access.realty:
-        tab: 'mavitm.estate::lang.plugin.name'
-        label: 'mavitm.estate::lang.plugin.name'
+    awebsome.realestate.access.realty:
+        tab: 'awebsome.realestate::lang.plugin.name'
+        label: 'awebsome.realestate::lang.plugin.name'
 navigation:
     estate:
-        label: 'mavitm.estate::lang.plugin.name'
-        url: mavitm/estate/realties
+        label: 'awebsome.realestate::lang.plugin.name'
+        url: awebsome/realestate/realties
         icon: icon-building
         permissions:
-            - mavitm.estate.access.realty
+            - awebsome.realestate.access.realty
         sideMenu:
             realty:
-                label: 'mavitm.estate::lang.plugin.name'
-                url: mavitm/estate/realties
+                label: 'awebsome.realestate::lang.plugin.name'
+                url: awebsome/realestate/realties
                 icon: icon-building-o
                 permissions:
-                    - mavitm.estate.access.realty
+                    - awebsome.realestate.access.realty
             category:
-                label: 'mavitm.estate::lang.plugin.category'
-                url: mavitm/estate/categories
+                label: 'awebsome.realestate::lang.plugin.category'
+                url: awebsome/realestate/categories
                 icon: icon-folder
                 permissions:
-                    - mavitm.estate.access.realty
+                    - awebsome.realestate.access.realty
             tags:
-                label: 'mavitm.estate::lang.tags.title'
-                url: mavitm/estate/tags
+                label: 'awebsome.realestate::lang.tags.title'
+                url: awebsome/realestate/tags
                 icon: icon-tags
                 permissions:
-                    - mavitm.estate.access.realty
+                    - awebsome.realestate.access.realty

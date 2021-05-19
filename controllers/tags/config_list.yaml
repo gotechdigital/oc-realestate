@@ -1,6 +1,6 @@
 title: Tags
-modelClass: Mavitm\Estate\Models\Tag
-list: $/mavitm/estate/models/tag/columns.yaml
+modelClass: Awebsome\Realestate\Models\Tag
+list: $/awebsome/realestate/models/tag/columns.yaml
 noRecordsMessage: 'backend::lang.list.no_records'
 recordsPerPage: '50'
 showSetup: true

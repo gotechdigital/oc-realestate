@@ -1,7 +1,7 @@
-<h3 class="page-header"><?= e(trans('mavitm.estate::lang.message.realty_id'))?></h3>
+<h3 class="page-header"><?= e(trans('awebsome.realestate::lang.message.realty_id'))?></h3>
 <div class="row">
     <div class="col-md-2">
-        <a href="<?= \Backend\Facades\Backend::url('mavitm/estate/realties/preview/' . $formModel->realty->id) ?>" target="_blank">
+        <a href="<?= \Backend\Facades\Backend::url('awebsome/realestate/realties/preview/' . $formModel->realty->id) ?>" target="_blank">
             <img src="<?=$formModel->realty->images[0]->path;?>" alt="image" style="width: 100%; margin-bottom: 15px;">
         </a>
     </div>
@@ -18,5 +18,5 @@
     </div>
 </div>
 
-<h3 class="page-header"><?= e(trans('mavitm.estate::lang.message.message'))?></h3>
-<a href="tel:<?=$formModel->phone;?>" class="btn btn-primary pull-right"><i class="icon-phone"></i> <?= e(trans('mavitm.estate::lang.message.call'))?></a>
+<h3 class="page-header"><?= e(trans('awebsome.realestate::lang.message.message'))?></h3>
+<a href="tel:<?=$formModel->phone;?>" class="btn btn-primary pull-right"><i class="icon-phone"></i> <?= e(trans('awebsome.realestate::lang.message.call'))?></a>

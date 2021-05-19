@@ -1,7 +1,7 @@
-<?php namespace Mavitm\Estate\Controllers;
+<?php namespace Awebsome\Realestate\Controllers;
 
 use BackendMenu;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Settings;
 use Backend\Classes\Controller;
 
 class Messages extends Controller
@@ -15,14 +15,14 @@ class Messages extends Controller
     public $listConfig = 'config_list.yaml';
     
     public $requiredPermissions = [
-        'mavitm.estate.access.realty'
+        'awebsome.realestate.access.realty'
     ];
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Mavitm.Estate', 'estate', 'messages');
+        BackendMenu::setContext('Awebsome.Realestate', 'estate', 'messages');
         $this->vars['relatySettings'] = Settings::instance();
     }
 }

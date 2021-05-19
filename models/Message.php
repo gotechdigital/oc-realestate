@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate\Models;
+<?php namespace Awebsome\Realestate\Models;
 
 use Model;
 
@@ -18,7 +18,7 @@ class Message extends Model
     /**
     * @var string
     */
-    public $table = 'mavitm_estate_messages';
+    public $table = 'awebsome_realestate_messages';
 
     /**
     * @var array
@@ -41,10 +41,10 @@ class Message extends Model
 
     public function canEdit(User $user)
     {
-        return ($this->user_id == $user->id) || $user->hasAnyAccess(['mavitm.estate.access.realty']);
+        return ($this->user_id == $user->id) || $user->hasAnyAccess(['awebsome.realestate.access.realty']);
     }
 
     public $belongsTo = [
-        'realty' => [ 'Mavitm\Estate\Models\Realty', 'key' => 'realty_id', 'otherKey' => 'id' ]
+        'realty' => [ 'Awebsome\Realestate\Models\Realty', 'key' => 'realty_id', 'otherKey' => 'id' ]
     ];
 }

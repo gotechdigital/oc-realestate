@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate\Models;
+<?php namespace Awebsome\Realestate\Models;
 
 use Model;
 
@@ -18,7 +18,7 @@ class Feature extends Model
     /**
      * @var string
      */
-    public $table = 'mavitm_estate_features';
+    public $table = 'awebsome_realestate_features';
     /**
      * @var array
      */
@@ -29,7 +29,7 @@ class Feature extends Model
      */
     public $rules = [
         'title' => 'required',
-        'slug'  => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:mavitm_estate_features'],
+        'slug'  => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:awebsome_realestate_features'],
     ];
 
     /**
@@ -37,9 +37,9 @@ class Feature extends Model
      */
     public $belongsToMany = [
         'realty' => [
-            'Mavitm\Estate\Models\Realty',
-            'table' => 'mavitm_estate_realty_feature',
-            'order' => 'mavitm_estate_realty.updated_at desc',
+            'Awebsome\Realestate\Models\Realty',
+            'table' => 'awebsome_realestate_realty_feature',
+            'order' => 'awebsome_realestate_realty.updated_at desc',
         ],
     ];
 

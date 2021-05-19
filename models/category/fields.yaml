@@ -1,11 +1,11 @@
 fields:
     title:
-        label: 'mavitm.estate::lang.categories.title'
+        label: 'awebsome.realestate::lang.categories.title'
         span: auto
         required: 1
         type: text
     slug:
-        label: 'mavitm.estate::lang.categories.slug'
+        label: 'awebsome.realestate::lang.categories.slug'
         span: auto
         required: 1
         preset:
@@ -13,7 +13,7 @@ fields:
             type: slug
         type: text
     description:
-        label: 'mavitm.estate::lang.categories.description'
+        label: 'awebsome.realestate::lang.categories.description'
         size: giant
         span: full
         type: richeditor

@@ -1,8 +1,8 @@
-<?php namespace Mavitm\Estate\Controllers;
+<?php namespace Awebsome\Realestate\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use Mavitm\Estate\Models\Tag;
+use Awebsome\Realestate\Models\Tag;
 
 class Tags extends Controller
 {
@@ -11,12 +11,12 @@ class Tags extends Controller
     public $listConfig = 'config_list.yaml';
 
     public $requiredPermissions = [
-        'mavitm.estate.access.realty' 
+        'awebsome.realestate.access.realty' 
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Mavitm.Estate', 'estate', 'tags');
+        BackendMenu::setContext('Awebsome.Realestate', 'estate', 'tags');
     }
 }

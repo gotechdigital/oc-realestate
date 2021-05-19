@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate\Models;
+<?php namespace Awebsome\Realestate\Models;
 
 use Str;
 use Lang;
@@ -6,7 +6,7 @@ use Model;
 use Carbon\Carbon;
 use Backend\Models\User;
 use ValidationException;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Settings;
 use RainLab\Translate\Models\Message;
 /**
  * Model
@@ -15,14 +15,14 @@ class Realty extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
-    public $table       = 'mavitm_estate_realty';
+    public $table       = 'awebsome_realestate_realty';
     public $implement   = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     protected $fillable = ['views'];
 
     public $rules = [
         'title'     => 'required',
-        'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:mavitm_estate_realty'],
+        'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:awebsome_realestate_realty'],
         'price'     => 'required',
         'address'   => 'required|string'
     ];
@@ -45,31 +45,31 @@ class Realty extends Model
     ############################################################################################################
 
     public $belongsTo = [
-        'category' => ['Mavitm\Estate\Models\Category']
+        'category' => ['Awebsome\Realestate\Models\Category']
     ];
     public $attachMany = [
         'images' => ['System\Models\File']
     ];
     public $belongsToMany = [
         'tags' => [
-            'Mavitm\Estate\Models\Tag',
-            'table' => 'mavitm_estate_realty_tag',
+            'Awebsome\Realestate\Models\Tag',
+            'table' => 'awebsome_realestate_realty_tag',
             'order' => 'title'
         ],
         'features' => [
-            'Mavitm\Estate\Models\Feature',
-            'table' => 'mavitm_estate_realty_feature',
+            'Awebsome\Realestate\Models\Feature',
+            'table' => 'awebsome_realestate_realty_feature',
             'order' => 'title'
         ],
     ];
 
     public $hasMany = [
         'properties' => [
-            'Mavitm\Estate\Models\Property',
+            'Awebsome\Realestate\Models\Property',
             'order' => 'sort_order',
         ],
         'messages' => [
-            'Mavitm\Estate\Models\Message',
+            'Awebsome\Realestate\Models\Message',
             'order' => 'created_at desc'
         ]
     ];
@@ -80,7 +80,7 @@ class Realty extends Model
 
     public function canEdit(User $user)
     {
-        return ($this->user_id == $user->id) || $user->hasAnyAccess(['mavitm.estate.access.realty']);
+        return ($this->user_id == $user->id) || $user->hasAnyAccess(['awebsome.realestate.access.realty']);
     }
 
     ############################################################################################################
@@ -114,23 +114,11 @@ class Realty extends Model
 
     public function getStatusOptions()
     {
-        /* db index => lang index */
         return [
-//            0 => e(trans('mavitm.estate::lang.realty.buy')),
-//            1 => e(trans('mavitm.estate::lang.realty.rent')),
-//            2 => e(trans('mavitm.estate::lang.realty.sold'))
-
-            0 => Message::get("Buy"),//_("Buy"),
-            1 => Message::get("Rent"),//_("Rent"),
-            2 => Message::get("Sold"),//_("Sold")
-
+            'rent' => 'awebsome.realestate::lang.realty.rent',
+            'sale' => 'awebsome.realestate::lang.realty.sale',
+            'sold' => 'awebsome.realestate::lang.realty.sold'
         ];
-    }
-
-    public function getTextStatusAttribute($value)
-    {
-        /* db index => lang index */
-        return $this->getStatusOptions()[$this->status];
     }
 
     ############################################################################################################

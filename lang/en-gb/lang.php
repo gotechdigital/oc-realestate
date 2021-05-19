@@ -67,7 +67,7 @@
     ],
     'settings' => [
         'menuLabel'         => 'Settings',
-        'menuDescription'   => 'Manage Mavitm real estate configuration.',
+        'menuDescription'   => 'Manage Awebsome real estate configuration.',
         'general'           => 'General',
         'currency'          => 'Currency',
         'pages'             => 'Pages',

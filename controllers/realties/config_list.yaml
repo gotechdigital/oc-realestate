@@ -1,7 +1,7 @@
-title: 'mavitm.estate::lang.plugin.name'
-modelClass: Mavitm\Estate\Models\Realty
-list: $/mavitm/estate/models/realty/columns.yaml
-recordUrl: 'mavitm/estate/realties/update/:id'
+title: 'awebsome.realestate::lang.plugin.name'
+modelClass: Awebsome\Realestate\Models\Realty
+list: $/awebsome/realestate/models/realty/columns.yaml
+recordUrl: 'awebsome/realestate/realties/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 
 recordsPerPage: '15'

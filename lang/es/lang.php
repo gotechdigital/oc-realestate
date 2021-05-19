@@ -47,10 +47,10 @@
         'selectHide'   => 'Hide selected',
         'hide_confirm' => 'Are you sure?',
         'status'       => 'Status',
-        'sale'         => 'Sale',
-        'buy'          => 'Buy',
-        'rent'         => 'Rent',
-        'sold'         => 'Sold',
+        'sale'         => 'En venta',
+        'rent'         => 'En alquiler',
+        'rented'       => 'Alquilado',
+        'sold'         => 'Vendido',
         'address'      => 'Address'
     ],
     'contactForm' => [

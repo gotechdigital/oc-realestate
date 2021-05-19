@@ -1,18 +1,19 @@
-<?php namespace Mavitm\Estate\Components;
+<?php namespace Awebsome\Realestate\Components;
 /**
-*@Author Mavitm
-*@url http://www.mavitm.com
+*@Author Awebsome
+*@url https://gotech.ar
 */
 
 use October\Rain\Exception\ApplicationException;
 use Str;
 use Lang;
 use Redirect;
+use Session;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Mavitm\Estate\Models\Realty;
-use Mavitm\Estate\Models\Category;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Realty;
+use Awebsome\Realestate\Models\Category;
+use Awebsome\Realestate\Models\Settings;
 use Illuminate\Support\Facades\Input;
 
 class Realtylist extends ComponentBase
@@ -32,8 +33,8 @@ class Realtylist extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'mavitm.estate::lang.components.listName',
-            'description' => 'mavitm.estate::lang.components.listNameDesc'
+            'name'        => 'awebsome.realestate::lang.components.listName',
+            'description' => 'awebsome.realestate::lang.components.listNameDesc'
         ];
     }
 
@@ -43,46 +44,46 @@ class Realtylist extends ComponentBase
 
         return [
             'pageNumber' => [
-                'title'             => 'mavitm.estate::lang.components.pagination',
-                'description'       => 'mavitm.estate::lang.components.pagination_description',
+                'title'             => 'awebsome.realestate::lang.components.pagination',
+                'description'       => 'awebsome.realestate::lang.components.pagination_description',
                 'type'              => 'string',
                 'default'           => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title'             => 'mavitm.estate::lang.components.categoryFilter',
-                'description'       => 'mavitm.estate::lang.components.filter_description',
+                'title'             => 'awebsome.realestate::lang.components.categoryFilter',
+                'description'       => 'awebsome.realestate::lang.components.filter_description',
                 'type'              => 'string',
                 'default'           => '{{ :slug }}'
             ],
             'itemsPerPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_per_page',
+                'title'             => 'awebsome.realestate::lang.components.items_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'mavitm.estate::lang.components.items_per_page_validation',
+                'validationMessage' => 'awebsome.realestate::lang.components.items_per_page_validation',
                 'default'           => 15,
             ],
             'categoryPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_category',
+                'title'             => 'awebsome.realestate::lang.components.items_category',
                 'type'              => 'dropdown',
                 'default'           => $settings->category_page,
                 'group'             => 'Links',
             ],
             'detailPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_post',
+                'title'             => 'awebsome.realestate::lang.components.items_post',
                 'type'              => 'dropdown',
                 'default'           => $settings->detail_page,
                 'group'             => 'Links',
                 'options'           => $this->getCategoryPageOptions()
             ],
             'searchPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_search',
+                'title'             => 'awebsome.realestate::lang.components.items_search',
                 'type'              => 'dropdown',
                 'default'           => $settings->search_page,
                 'group'             => 'Links',
                 'options'           => $this->getCategoryPageOptions()
             ],
             'sortField' => [
-                'title'             => 'mavitm.estate::lang.components.sortField',
+                'title'             => 'awebsome.realestate::lang.components.sortField',
                 'type'              => 'dropdown',
                 'default'           => 'created_at',
                 'group'             => 'Ranking',
@@ -92,7 +93,7 @@ class Realtylist extends ComponentBase
                 ],
             ],
             'sortType' => [
-                'title'             => 'mavitm.estate::lang.components.sortType',
+                'title'             => 'awebsome.realestate::lang.components.sortType',
                 'type'              => 'dropdown',
                 'default'           => 'desc',
                 'group'             => 'Ranking',
@@ -103,28 +104,28 @@ class Realtylist extends ComponentBase
             ],
             'colLg' => [
                 'title'             => 'col-lg-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 3,
                 'group'             => 'Column',
             ],
             'colMd' => [
                 'title'             => 'col-md-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 4,
                 'group'             => 'Column',
             ],
             'colSm' => [
                 'title'             => 'col-sm-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 6,
                 'group'             => 'Column',
             ],
             'colXs' => [
                 'title'             => 'col-xs-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 12,
                 'group'             => 'Column',
@@ -141,6 +142,9 @@ class Realtylist extends ComponentBase
 
     public function onRun()
     {
+        $this->page['filters'] = Session::get('filters');
+        $this->page['realties'] = $this->getProperties();
+
         $this->prepareVars();
         $settings                   = Settings::instance();
         $this->data                 = $this->page['data']         = $this->loadList();
@@ -229,5 +233,56 @@ class Realtylist extends ComponentBase
 
         return $items;
     }
+
+    public function getProperties()
+    {
+        $properties = Realty::isPublished();
+        $filter_condition = Session::get('filters.filter_condition');
+        $order = Session::get('filters.order');
+        
+        if(!empty($filter_condition)) {
+            $properties->where('status', $filter_condition);
+        }
+
+        // date_desc
+        // date_asc
+        // price_asc
+        // price_desc
+        
+        switch ($order) {
+            case 'date_desc':
+                $properties->orderBy('created_at','desc');
+                break;
+            case 'date_asc':
+                $properties->orderBy('created_at','asc');
+                break;
+            case 'price_asc':
+                $properties->orderBy('price','asc');
+                break;
+            case 'price_desc':
+                $properties->orderBy('price','desc');
+                break;
+            
+            default:
+                $properties->orderBy('created_at','desc');
+                break;
+        }
+
+        return $properties->paginate($this->property('itemsPerPage'));
+    }
+
+    public function onFilter()
+    {
+        if(Input::has('filter_condition')) {
+            $filter = Input::get('filter_condition');
+            Session::put('filters.filter_condition', $filter);
+        }
+        
+        if(Input::has('order')) {
+            $order = Input::get('order');
+            Session::put('filters.order', $order);
+        }
+    }
+
 
 }

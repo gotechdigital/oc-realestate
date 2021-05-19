@@ -1,4 +1,4 @@
-<?php namespace Mavitm\Estate\Models;
+<?php namespace Awebsome\Realestate\Models;
 
 use Model;
 
@@ -12,16 +12,16 @@ class Category extends Model
 
     public $timestamps = true;
 
-    public $table       = 'mavitm_estate_categories';
+    public $table       = 'awebsome_realestate_categories';
     public $implement   = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     public $rules = [
         'title'     => 'required',
-        'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:mavitm_estate_categories']
+        'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:awebsome_realestate_categories']
     ];
 
     public $hasMany = [
-        'realty' => ['Mavitm\Estate\Models\Realty']
+        'realty' => ['Awebsome\Realestate\Models\Realty']
     ];
 
     public $translatable = ['title', 'description'];

@@ -1,39 +1,17 @@
-<?php namespace Mavitm\Estate\Models;
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 02.10.2016
- * Time: 13:39
- */
+<?php namespace Awebsome\Realestate\Models;
+
 use Model;
 use Cms\Classes\Page;
+use Responsiv\Currency\Models\Currency;
 
 class Settings extends Model
 {
     public $implement       = ['System.Behaviors.SettingsModel'];
-    public $settingsCode    = 'mavitm_estate_settings';
+    public $settingsCode    = 'awebsome_realestate_settings';
     public $settingsFields  = 'fields.yaml';
 
     private static
             $importVendor   = 0;
-
-    /**
-     * Font Awesome Currency Icons
-     * @var array
-     */
-    public $currencyCssClass= [
-        'btc'   => 'bitcoin',
-        'eur'   => 'euro',
-        'gbp'   => 'gbp',
-        'gg'    => 'gg',
-        'ils'   => 'ils',
-        'inr'   => 'jnr',
-        'jpy'   => 'jpy',
-        'krw'   => 'krw',
-        'rub'   => 'rub',
-        'usd'   => 'usd',
-        'try'   => 'try',
-    ];
 
     public function getDetailPageOptions()
     {
@@ -42,7 +20,7 @@ class Settings extends Model
 
     public function getCurrencyOptions()
     {
-        return $this->currencyCssClass;
+        return Currency::isEnabled()->orderBy('currency_code', 'asc')->lists('currency_code', 'currency_code');
     }
 
     /** This should not be here **/
@@ -54,25 +32,25 @@ class Settings extends Model
         self::$importVendor = 1;
 
         if($this->import_bootsrap){
-            $controller->addCss('/plugins/mavitm/estate/assets/css/bootstrap.min.css');
-            $controller->addJs('/plugins/mavitm/estate/assets/js/bootstrap.min.js');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/bootstrap.min.css');
+            $controller->addJs('/plugins/awebsome/realestate/assets/js/bootstrap.min.js');
         }
 
         if($this->import_owl){
-            $controller->addCss('/plugins/mavitm/estate/assets/css/owl.carousel.css');
-            $controller->addCss('/plugins/mavitm/estate/assets/css/owl.theme.css');
-            $controller->addCss('/plugins/mavitm/estate/assets/css/owl.transitions.css');
-            $controller->addJs('/plugins/mavitm/estate/assets/js/owl.carousel.min.js');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/owl.carousel.css');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/owl.theme.css');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/owl.transitions.css');
+            $controller->addJs('/plugins/awebsome/realestate/assets/js/owl.carousel.min.js');
         }
 
         if($this->import_fa){
-            $controller->addCss('/plugins/mavitm/estate/assets/css/font-awesome.min.css');
-            $controller->addCss('/plugins/mavitm/estate/assets/css/font-awesome-v4-shims.min.css');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/font-awesome.min.css');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/font-awesome-v4-shims.min.css');
         }
 
         if($this->import_custom){
-            $controller->addCss('/plugins/mavitm/estate/assets/css/style.css');
-            $controller->addJs('/plugins/mavitm/estate/assets/js/mavitm.js');
+            $controller->addCss('/plugins/awebsome/realestate/assets/css/style.css');
+            $controller->addJs('/plugins/awebsome/realestate/assets/js/scripts.js');
         }
     }
 

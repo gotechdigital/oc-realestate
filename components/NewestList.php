@@ -1,7 +1,7 @@
-<?php namespace Mavitm\Estate\Components;
+<?php namespace Awebsome\Realestate\Components;
 /**
-*@Author Mavitm
-*@url http://www.mavitm.com
+*@Author Awebsome
+*@url https://gotech.ar
 */
 
 use October\Rain\Exception\ApplicationException;
@@ -10,8 +10,8 @@ use Lang;
 use Redirect;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Mavitm\Estate\Models\Realty;
-use Mavitm\Estate\Models\Settings;
+use Awebsome\Realestate\Models\Realty;
+use Awebsome\Realestate\Models\Settings;
 use Illuminate\Support\Facades\Input;
 
 class NewestList extends ComponentBase
@@ -25,8 +25,8 @@ class NewestList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'mavitm.estate::lang.components.newestName',
-            'description' => 'mavitm.estate::lang.components.newestNameDesc'
+            'name'        => 'awebsome.realestate::lang.components.newestName',
+            'description' => 'awebsome.realestate::lang.components.newestNameDesc'
         ];
     }
 
@@ -36,14 +36,14 @@ class NewestList extends ComponentBase
 
         return [
             'itemsPerPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_per_page',
+                'title'             => 'awebsome.realestate::lang.components.items_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'mavitm.estate::lang.components.items_per_page_validation',
+                'validationMessage' => 'awebsome.realestate::lang.components.items_per_page_validation',
                 'default'           => 4,
             ],
             'detailPage' => [
-                'title'             => 'mavitm.estate::lang.components.items_post',
+                'title'             => 'awebsome.realestate::lang.components.items_post',
                 'type'              => 'dropdown',
                 'default'           => $settings->detail_page,
                 'group'             => 'Links',
@@ -51,28 +51,28 @@ class NewestList extends ComponentBase
             ],
             'colLg' => [
                 'title'             => 'col-lg-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 3,
                 'group'             => 'Column',
             ],
             'colMd' => [
                 'title'             => 'col-md-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 4,
                 'group'             => 'Column',
             ],
             'colSm' => [
                 'title'             => 'col-sm-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 6,
                 'group'             => 'Column',
             ],
             'colXs' => [
                 'title'             => 'col-xs-?',
-                'description'       => 'mavitm.estate::lang.components.column',
+                'description'       => 'awebsome.realestate::lang.components.column',
                 'type'              => 'string',
                 'default'           => 12,
                 'group'             => 'Column',
