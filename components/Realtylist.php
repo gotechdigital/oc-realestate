@@ -284,5 +284,9 @@ class Realtylist extends ComponentBase
         }
     }
 
+    public function getRecentProperties()
+    {
+        return Realty::isPublished()->orderBy('created_at', 'desc')->get();
+    }
 
 }
