@@ -1,4 +1,8 @@
 columns:
+    id:
+        label: ID
+        searchable: true
+        sortable: true
     realtyimages:
         label: 'awebsome.realestate::lang.realty.images'
         type: partial
