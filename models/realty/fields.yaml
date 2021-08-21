@@ -1,8 +1,11 @@
 fields:
-
+    id@update:
+        label: ID
+        span: left
+        disabled: true
     title:
         label: 'awebsome.realestate::lang.realty.title'
-        span: auto
+        span: left
         required: 1
         type: text
 
