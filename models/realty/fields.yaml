@@ -8,7 +8,6 @@ fields:
         span: left
         required: 1
         type: text
-
     slug:
         label: 'awebsome.realestate::lang.realty.slug'
         span: auto
@@ -17,7 +16,6 @@ fields:
             field: title
             type: slug
         type: text
-
     category:
         label: 'awebsome.realestate::lang.realty.category'
         nameFrom: title
@@ -25,7 +23,6 @@ fields:
         span: auto
         required: 1
         type: relation
-
     price:
         label: 'awebsome.realestate::lang.realty.price'
         span: auto
@@ -44,6 +41,12 @@ fields:
         required: 1
         type: text
 
+    latitude:
+        label: Latitude
+        span: left
+    longitude:
+        label: Longitude
+        span: right
     published:
         label: 'awebsome.realestate::lang.realty.published'
         span: auto
