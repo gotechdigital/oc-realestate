@@ -22,9 +22,10 @@ class Realty extends Model
 
     public $rules = [
         'title'     => 'required',
-        'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:awebsome_realestate_realty'],
+        'code'      => 'required|alpha_num|unique:awebsome_realestate_realty',
+        'slug'      => ['required', 'alpha_dash', 'unique:awebsome_realestate_realty'],
         'price'     => 'required',
-        'address'   => 'required|string'
+        'address'   => 'required|string',
     ];
 
     public $translatable = ['title', 'excerpt', 'description', 'address'];
