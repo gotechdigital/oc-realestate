@@ -1,8 +1,7 @@
 fields:
-    id@update:
-        label: ID
-        span: left
-        disabled: true
+    code:
+        label: Code
+        span: left    
     title:
         label: 'awebsome.realestate::lang.realty.title'
         span: left
@@ -55,7 +54,10 @@ fields:
 
 tabs:
     fields:
-
+        tag:
+            tab: 'awebsome.realestate::lang.realty.description'
+            label: Tag
+            span: left
         excerpt:
             label: 'awebsome.realestate::lang.realty.excerpt'
             size: tiny

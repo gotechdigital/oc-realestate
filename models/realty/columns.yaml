@@ -3,6 +3,11 @@ columns:
         label: ID
         searchable: true
         sortable: true
+        invisible: true
+    code:
+        label: Code
+        searchable: true
+        sortable: true
     realtyimages:
         label: 'awebsome.realestate::lang.realty.images'
         type: partial
