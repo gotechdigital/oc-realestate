@@ -82,16 +82,16 @@ tabs:
             span: full
             type: fileupload
             tab:  'awebsome.realestate::lang.realty.images'
-        images_360:
-            tab:  'awebsome.realestate::lang.realty.images_360'
-            label: 'awebsome.realestate::lang.realty.images_360'
-            mode: image
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: full
-            type: fileupload
+        # images_360:
+        #     tab:  'awebsome.realestate::lang.realty.images_360'
+        #     label: 'awebsome.realestate::lang.realty.images_360'
+        #     mode: image
+        #     useCaption: true
+        #     thumbOptions:
+        #         mode: crop
+        #         extension: auto
+        #     span: full
+        #     type: fileupload
 
         properties:
             type: partial
