@@ -49,7 +49,8 @@ class Realty extends Model
         'category' => ['Awebsome\Realestate\Models\Category']
     ];
     public $attachMany = [
-        'images' => ['System\Models\File']
+        'images' => ['System\Models\File'],
+        'images_360' => ['System\Models\File'],
     ];
     public $belongsToMany = [
         'tags' => [

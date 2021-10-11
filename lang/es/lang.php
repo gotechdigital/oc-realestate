@@ -38,6 +38,7 @@
         'description'  => 'Description',
         'published'    => 'On the air',
         'images'       => 'Images',
+        'images_360'       => 'Images 360',
         'create_at'    => 'Added',
         'update_at'    => 'Updated',
         'tags'         => 'Keywords',

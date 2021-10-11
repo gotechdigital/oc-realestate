@@ -92,6 +92,24 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'base64_enc' => [$this, 'encode'],
+                'base64_dec' => [$this, 'decode'],
+            ],
+        ];
+    }
+
+    public function encode($img) {
+        return base64_encode($img);
+    }
+    
+    public function decode($img) {
+        return base64_decode($img);
+    }
+
     public function registerSettings()
     {
         return [
